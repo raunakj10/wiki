@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+   search results
+{% endblock %}
+
+{% block body %}
+    <h1>Similar search results</h1>
+
+    <ul>
+        {% for result in results %}
+            <a href="{% url 'encyclopedia:title'  result  %} "><li>{{ result|safe }}</li></a>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
